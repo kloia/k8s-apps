@@ -1,0 +1,14 @@
+stages:
+- name: Build
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: 172.31.15.112:${CICD_EXECUTION_SEQUENCE}
+
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+      path: ./new-reg.yaml
+
+
