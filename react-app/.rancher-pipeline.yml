@@ -2,13 +2,13 @@ stages:
 - name: Build
   steps:
   - publishImageConfig:
-      dockerfilePath: ./react-app/Dockerfile.build
-      buildContext: ./react-app
+      dockerfilePath: ./Dockerfile.build
+      buildContext: .
       tag: 172.31.15.112:${CICD_EXECUTION_SEQUENCE}
 
 - name: Deploy
   steps:
   - applyYamlConfig:
-      path: ./react-app/deployment.yaml
+      path: ./new-reg.yaml
 
 
