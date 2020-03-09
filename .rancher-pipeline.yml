@@ -3,7 +3,7 @@ stages:
   steps:
   - publishImageConfig:
       dockerfilePath: ./react-app/Dockerfile.build
-      buildContext: .
+      buildContext: ./react-app
       tag: 172.31.15.112:${CICD_EXECUTION_SEQUENCE}
 
 - name: Deploy
